@@ -7,6 +7,7 @@ from fabric.api import abort, env, local, settings, task
 
 ########## GLOBALS
 env.run = 'heroku run python manage.py'
+env.run_local = 'python manage.py'
 HEROKU_ADDONS = (
     'cloudamqp:lemur',
     'heroku-postgresql:dev',
@@ -42,6 +43,12 @@ def cont(cmd, message):
     if message and result.failed and not confirm(message):
         abort('Stopped execution per user request.')
 ########## END HELPERS
+
+
+@task
+def generate_secret_key():
+    """Generates a new secret key"""
+    local('%(run_local)s generate_secret_key' % env)
 
 
 ########## DATABASE MANAGEMENT
