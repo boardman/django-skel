@@ -77,6 +77,12 @@ def migrate(app=None):
 def collectstatic():
     """Collect all static files, and copy them to S3 for production usage."""
     local('%(run)s collectstatic --noinput' % env)
+
+
+@task
+def compress():
+    """Compress static files for production usage."""
+    local('%(run)s compress' % env)
 ########## END FILE MANAGEMENT
 
 
