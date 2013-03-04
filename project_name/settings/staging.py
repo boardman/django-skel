@@ -9,10 +9,13 @@ from S3 import CallingFormat
 
 from common import *
 
+
 ########## GENERAL CONFIGURATION
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
+########## END GENERAL CONFIGURATION
+
 
 ########## EMAIL CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
