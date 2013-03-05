@@ -1,11 +1,22 @@
 """Common settings and globals."""
 
-
+from os import environ
 from datetime import timedelta
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
 
+from django.core.exceptions import ImproperlyConfigured
+
 from djcelery import setup_loader
+
+
+def get_env_variable(var_name):
+    """ Get the environment variable or return exception """
+    try:
+        return environ[var_name]
+    except KeyError:
+        error_msg = "Set the %s environment variable" % var_name
+        raise ImproperlyConfigured(error_msg)
 
 
 ########## PATH CONFIGURATION
