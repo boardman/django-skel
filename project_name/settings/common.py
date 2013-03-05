@@ -239,6 +239,8 @@ LOGGING = {
 # See: http://celery.readthedocs.org/en/latest/configuration.html#celery-task-result-expires
 CELERY_TASK_RESULT_EXPIRES = timedelta(minutes=30)
 
+CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
+
 # See: http://celery.github.com/celery/django/
 setup_loader()
 ########## END CELERY CONFIGURATION
