@@ -202,7 +202,7 @@ THIRD_PARTY_APPS = (
     'djcelery',
 
     # Django extensions:
-    'django_extensions'
+    'django_extensions',
 )
 
 LOCAL_APPS = (

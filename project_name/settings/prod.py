@@ -88,6 +88,8 @@ CELERY_RESULT_BACKEND = 'amqp'
 # See: http://django-storages.readthedocs.org/en/latest/index.html
 INSTALLED_APPS += (
     'storages',
+    # Raven - Sentry Client
+    'raven.contrib.django.raven_compat',
 )
 
 # See: http://django-storages.readthedocs.org/en/latest/backends/amazon-S3.html#settings
@@ -138,3 +140,10 @@ COMPRESS_JS_FILTERS += [
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = environ.get('SECRET_KEY', SECRET_KEY)
 ########## END SECRET CONFIGURATION
+
+
+########## RAVEN CONFIGURATION
+RAVEN_CONFIG = {
+    'dsn': environ.get('RAVEN_DSN', ''),
+}
+########## END RAVEN CONFIGURATION
