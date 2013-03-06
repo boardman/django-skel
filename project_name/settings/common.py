@@ -303,3 +303,9 @@ COMPRESS_JS_FILTERS = [
     'compressor.filters.template.TemplateFilter',
 ]
 ########## END COMPRESSION CONFIGURATION
+
+########## RAVEN CONFIGURATION
+RAVEN_CONFIG = {
+    'dsn': get_env_variable('RAVEN_DSN'),
+}
+########## END RAVEN CONFIGURATION

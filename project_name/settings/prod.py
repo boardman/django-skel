@@ -136,10 +136,3 @@ COMPRESS_JS_FILTERS += [
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = get_env_variable('SECRET_KEY')
 ########## END SECRET CONFIGURATION
-
-
-########## RAVEN CONFIGURATION
-RAVEN_CONFIG = {
-    'dsn': get_env_variable('RAVEN_DSN'),
-}
-########## END RAVEN CONFIGURATION
