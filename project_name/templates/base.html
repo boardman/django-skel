@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load i18n compress %}
+<html>
+    <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+    <link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico">
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css">
+    {% compress css %}
+        <link rel="stylesheet" type="text/less" media="all" href="{{ STATIC_URL }}less/base.less" />
+        {% block extra_css %}{% endblock %}
+    {% endcompress %}
+
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+    {% compress js %}
+        {% block extra_js %}{% endblock %}
+    {% endcompress %}
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    {% block extra_head %}{% endblock %}
+
+    </head>
+    <body>
+        {% block body %}
+            <h1>Let's Roll...</h1>
+        {% endblock body %}
+    </body>
+</html>
