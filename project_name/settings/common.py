@@ -215,6 +215,9 @@ THIRD_PARTY_APPS = (
 
     # Django extensions:
     'django_extensions',
+
+    # Raven - Sentry Client
+    'raven.contrib.django.raven_compat',
 )
 
 LOCAL_APPS = (
