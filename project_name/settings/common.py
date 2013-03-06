@@ -167,6 +167,7 @@ TEMPLATE_DIRS = (
 MIDDLEWARE_CLASSES = (
     # Use GZip compression to reduce bandwidth.
     'django.middleware.gzip.GZipMiddleware',
+    'raven.contrib.django.raven_compat.middleware.SentryResponseErrorIdMiddleware',
 
     # Default Django middleware.
     'django.middleware.common.CommonMiddleware',
